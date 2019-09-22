@@ -1,0 +1,39 @@
+class Program
+    {
+        static void Main(string[] args)
+        {
+            BubbleSort();
+        }
+        //Bubble Sort
+        public static void BubbleSort()
+        {
+            //sorting an Array
+            int[] array = { 2, 3, -100, 2, 3, 6, 1, 8, 0 };
+            int minPos = array[0];
+            int[] result = new int[3];
+            for (int i = 0; i < array.Length - 1; i++)
+            {
+                int flag = 0;
+
+                for (int j = 0; j < array.Length - 1 - i; j++)
+                {
+                    if (array[j] > array[j + 1])
+                    {
+                        int temp = array[j];
+                        array[j] = array[j + 1];
+                        array[j + 1] = temp;
+                        flag = 1;
+                    }
+                }
+                if (flag == 0)
+                {
+                    break;
+                }
+            }
+            for (int i = 0; i < array.Length; i++)
+            {
+                Console.WriteLine(array[i]);
+            }
+            Console.ReadLine();
+        }
+    }
